@@ -16,3 +16,6 @@ export type TProduct = {
   inventory: TInventory;
   isDeleted: boolean;
 };
+export type TSearchTerm = {
+    searchTerm: any
+};

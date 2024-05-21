@@ -2,6 +2,8 @@ import { Request, Response } from 'express';
 import { ProductServices } from './product.service';
 import { productValidationSchema } from './product.validation';
 import { ZodError } from 'zod';
+import { TSearchTerm } from './product.interface';
+import { isEmpty } from '../../utility/utility';
 
 const createProduct = async (req: Request, res: Response) => {
   try {
@@ -38,8 +40,9 @@ const createProduct = async (req: Request, res: Response) => {
 
 const getAllProducts = async (req: Request, res: Response) => {
   try {
-    const result = await ProductServices.getAllProductsFromDB();
-    if(result){
+    const searchTerm:any= req.query.searchTerm;
+    const result = await ProductServices.getAllProductsFromDB(searchTerm);
+    if(!isEmpty(result)){
         res.status(200).json({
             success: true,
             message: 'All students are retrieved successfully',
@@ -52,6 +55,7 @@ const getAllProducts = async (req: Request, res: Response) => {
     res.status(500).json({
         success: false,
         message: error.message || "Something went wrong!",
+        error: error
     });
   }
 };
