@@ -20,8 +20,13 @@ const getAllProductsFromDB = async (searchTerm: string | number) => {
     }
   return result;
 };
+const updateDataIntoDB = async (id:any, productData: object) =>{
+    const result = await Product.findByIdAndUpdate(id, productData, {new:true});
+    return result;
+}
 
 export const ProductServices = {
   createProductIntoDB,
   getAllProductsFromDB,
+  updateDataIntoDB,
 };
