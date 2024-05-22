@@ -12,4 +12,12 @@ app.use(cors());
 app.use('/api/v1/products', ProductRoutes);
 app.use('/api/orders', OrderRoutes);
 
+// wrong route error
+app.use((req, res) => {
+    res.status(404).json({
+        success: false,
+        message: "Route not found"
+    })
+}); 
+
 export default app;

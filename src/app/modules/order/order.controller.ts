@@ -1,3 +1,4 @@
+import { TInventory } from './../product/product.interface';
 import { Request, Response } from "express";
 import { orderValidationSchema } from "./order.validation";
 import { OrderServices } from "./order.service";
@@ -32,8 +33,8 @@ const createNewOrder = async (req:Request, res: Response) => {
                             "inStock": stockStatus,
                         }
                     }
-                    console.log(updatedInventory);
-                    const updatedProduct = ProductServices.updateProductIntoDB(productId, updatedInventory);
+                    ProductServices.updateProductIntoDB(productId, updatedInventory);
+
                     res.status(200).json({
                         success: true,
                         message: 'Order created successfully!',
@@ -65,6 +66,29 @@ const createNewOrder = async (req:Request, res: Response) => {
           });
     }
 }
+
+const getAllOrders = async (req: Request, res: Response) =>{
+    try {
+        const email: any = req.query.email;
+        const orderData = await OrderServices.getAllOrdersFromDB(email);
+        if(!isEmptyOrNull(orderData)){
+            res.status(200).json({
+                success: true,
+                message: 'Orders retrieved successfully!',
+                data: orderData,
+            });
+        }else{
+            throw new Error("No orders found!")
+        }
+    } catch (error: any) {
+        res.status(500).json({
+            success: false,
+            message: error.message || 'Something went wrong!',
+            error: error,
+        });
+    }
+}
 export const OrderControllers = {
     createNewOrder,
+    getAllOrders,
 }
