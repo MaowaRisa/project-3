@@ -18,12 +18,9 @@ const productValidationSchema = z.object({
   tags: z.array(z.string()),
   variants: z.array(variantsValidationSchema),
   inventory: inventoryValidationSchema,
-  isDeleted: z.boolean()
+  isDeleted: z.boolean(),
 });
 
 const partialProductValidationSchema = productValidationSchema.partial();
 
-export {
-    productValidationSchema, 
-    partialProductValidationSchema
-}
+export { productValidationSchema, partialProductValidationSchema };

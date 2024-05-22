@@ -1,4 +1,4 @@
-import express, { Application} from 'express';
+import express, { Application } from 'express';
 import cors from 'cors';
 import { ProductRoutes } from './app/modules/product/product.route';
 const app: Application = express();

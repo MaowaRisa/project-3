@@ -17,5 +17,5 @@ export type TProduct = {
   isDeleted: boolean;
 };
 export type TSearchTerm = {
-    searchTerm: any
+  searchTerm: any;
 };

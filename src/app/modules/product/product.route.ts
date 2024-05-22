@@ -8,5 +8,7 @@ router.post('/create-product', ProductControllers.createProduct);
 // get products, and search operation
 router.get('/', ProductControllers.getAllProducts);
 // update product
-router.put('/:productId', ProductControllers.updateProduct )
+router.put('/:productId', ProductControllers.updateProduct);
+// Get a single product
+router.get('/:productId', ProductControllers.getSingleProduct);
 export const ProductRoutes = router;

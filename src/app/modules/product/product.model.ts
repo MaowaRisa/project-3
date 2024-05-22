@@ -31,7 +31,7 @@ const productSchema = new Schema<TProduct>({
   tags: { type: [String], required: true },
   variants: { type: [variantsSchema], required: true },
   inventory: { type: inventorySchema, required: true },
-  isDeleted: {type: Boolean}
+  isDeleted: { type: Boolean },
 });
 
 export const Product = model<TProduct>('Product', productSchema);
