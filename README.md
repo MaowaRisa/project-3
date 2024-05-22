@@ -2,16 +2,26 @@
 This is a straightforward Express application designed to manage product and order functionalities. It offers an API for creating, reading, updating, and deleting, searching products and orders, utilizing Express and MongoDB using Mongoose. Additionally, ESLint and Prettier have been employed for code quality and formatting.
 
 ## Project API for products and orders management
+project live link : 
+https://project-3-m057un3il-al-jannatul-maowas-projects.vercel.app/
 ### Products
 1. Create new products
+https://project-3-henna-seven.vercel.app/api/v1/products/create-product
 2. Retrieve all products 
+https://project-3-henna-seven.vercel.app/api/v1/products
 3. Search for products by name, description and category 
+https://project-3-henna-seven.vercel.app/api/v1/products?searchTerm=Red
 4. Update product
+https://project-3-henna-seven.vercel.app/api/v1/products/productId
 5. Delete product
+https://project-3-henna-seven.vercel.app/api/v1/products/productId
 ### Orders
 1. Create new order
+https://project-3-henna-seven.vercel.app/api/orders
 2. Retrieve all orders
+https://project-3-henna-seven.vercel.app/api/orders
 3. Get orders for specific email
+https://project-3-henna-seven.vercel.app/api/orders?email=email
 
 ## What you need to run this app
 - Node JS (used version : v20.11.1)
