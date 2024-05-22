@@ -1,5 +1,4 @@
 import { Model } from 'mongoose';
-import { Product } from './product.model';
 export type TVariants = {
   type: string;
   value: string;
@@ -18,7 +17,7 @@ export type TProduct = {
   inventory: TInventory;
   isDeleted: boolean;
 };
-// For static method 
+// static method 
 export interface IProductModel extends Model<TProduct>{
   isProductDeleted (id:string) : Promise<TProduct | null>
 }

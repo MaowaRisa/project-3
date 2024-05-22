@@ -53,11 +53,16 @@ const deleteProductFromDB = async (id: string) =>{
   const result = await Product.updateOne({ _id : id }, {isDeleted: true});
   return result;
 }
-
+// check available product 
+const isQuantityAvailableInDB = async (id:string, quantity: number) => {
+  const result = await Product.findOne({ _id: id, isDeleted: false, quantity: {$gte : quantity} });
+  return result;
+}
 export const ProductServices = {
   createProductIntoDB,
   getAllProductsFromDB,
   updateProductIntoDB,
   getSingleProductFromDB,
   deleteProductFromDB,
+  isQuantityAvailableInDB,
 };
