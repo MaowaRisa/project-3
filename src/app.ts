@@ -1,4 +1,4 @@
-import express, { Application } from 'express';
+import express, { Application, Request, Response } from 'express';
 import cors from 'cors';
 import { ProductRoutes } from './app/modules/product/product.route';
 import { OrderRoutes } from './app/modules/order/order.route';
@@ -14,11 +14,16 @@ app.use('/api/v1/products', ProductRoutes);
 app.use('/api/orders', OrderRoutes);
 
 // wrong route error
-app.use((req, res) => {
+app.use('/api',(req, res) => {
   res.status(404).json({
     success: false,
     message: 'Route not found',
   });
 });
+app.get('/', (req, res) =>{
+  res.status(200).json({
+    message: "Welcome to inventory management system."
+  })
+})
 
 export default app;
