@@ -77,7 +77,9 @@ const getSingleProduct = async (req: Request, res: Response) => {
         data: productData,
       });
     } else {
-      throw new Error('Product retrieved not successful! Check the data is deleted or moved!');
+      throw new Error(
+        'Product retrieved not successful! Check the data is deleted or moved!',
+      );
     }
   } catch (error: any) {
     res.status(500).json({
@@ -126,27 +128,27 @@ const updateProduct = async (req: Request, res: Response) => {
     });
   }
 };
-const deleteProduct = async (req: Request, res: Response) =>{
+const deleteProduct = async (req: Request, res: Response) => {
   try {
-    const {productId} = req.params;
+    const { productId } = req.params;
     const result = await ProductServices.deleteProductFromDB(productId);
-    if(!isEmptyOrNull(result)){
+    if (!isEmptyOrNull(result)) {
       res.status(200).json({
         success: true,
         message: 'Product deleted successfully!',
-        data: result
-      })
-    }else{
-      throw new Error("Delete not successful!")
+        data: result,
+      });
+    } else {
+      throw new Error('Delete not successful!');
     }
   } catch (error: any) {
     res.status(500).json({
       success: false,
-      message: error.message || "Something went wrong!",
+      message: error.message || 'Something went wrong!',
       error: error,
     });
   }
-}
+};
 export const ProductControllers = {
   createProduct,
   getAllProducts,

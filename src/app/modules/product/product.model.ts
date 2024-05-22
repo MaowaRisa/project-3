@@ -1,5 +1,10 @@
 import { Schema, model } from 'mongoose';
-import { IProductModel, TInventory, TProduct, TVariants } from './product.interface';
+import {
+  IProductModel,
+  TInventory,
+  TProduct,
+  TVariants,
+} from './product.interface';
 
 const variantsSchema = new Schema<TVariants>({
   type: {
@@ -33,7 +38,7 @@ const productSchema = new Schema<TProduct, IProductModel>({
   inventory: { type: inventorySchema, required: true },
   isDeleted: { type: Boolean },
 });
-// Static method for checking the deleted product 
+// Static method for checking the deleted product
 productSchema.statics.isProductDeleted = async function (id: string) {
   const deletedProduct = await Product.findOne({ _id: id, isDeleted: true });
   return deletedProduct;

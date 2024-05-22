@@ -17,7 +17,7 @@ export type TProduct = {
   inventory: TInventory;
   isDeleted: boolean;
 };
-// static method 
-export interface IProductModel extends Model<TProduct>{
-  isProductDeleted (id:string) : Promise<TProduct | null>
+// static method
+export interface IProductModel extends Model<TProduct> {
+  isProductDeleted(id: string): Promise<TProduct | null>;
 }
