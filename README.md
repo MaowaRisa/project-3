@@ -3,25 +3,25 @@ This is a straightforward Express application designed to manage product and ord
 
 ## Project API for products and orders management
 project live link : 
-https://project-3-m057un3il-al-jannatul-maowas-projects.vercel.app/
+https://assignmenttwo-lilac.vercel.app/
 ### Products
 1. Create new products
-https://project-3-henna-seven.vercel.app/api/products/create-product
+https://assignmenttwo-lilac.vercel.app/api/products/create-product
 2. Retrieve all products 
-https://project-3-henna-seven.vercel.app/api/products
+https://assignmenttwo-lilac.vercel.app/api/products
 3. Search for products by name, description and category 
-https://project-3-henna-seven.vercel.app/api/products?searchTerm=Red
+https://assignmenttwo-lilac.vercel.app/api/products?searchTerm=Red
 4. Update product
-https://project-3-henna-seven.vercel.app/api/products/productId
+https://assignmenttwo-lilac.vercel.app/api/products/productId
 5. Delete product
-https://project-3-henna-seven.vercel.app/api/products/productId
+https://assignmenttwo-lilac.vercel.app/api/products/productId
 ### Orders
 1. Create new order
-https://project-3-henna-seven.vercel.app/api/orders
+https://assignmenttwo-lilac.vercel.app/api/orders
 2. Retrieve all orders
-https://project-3-henna-seven.vercel.app/api/orders
+https://assignmenttwo-lilac.vercel.app/api/orders
 3. Get orders for specific email
-https://project-3-henna-seven.vercel.app/api/orders?email=email
+https://assignmenttwo-lilac.vercel.app/api/orders?email=email
 
 ## What you need to run this app
 - Node JS (used version : v20.11.1)
