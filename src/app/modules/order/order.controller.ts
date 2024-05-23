@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { TInventory, TProduct } from './../product/product.interface';
 import { Request, Response } from 'express';
 import { orderValidationSchema } from './order.validation';

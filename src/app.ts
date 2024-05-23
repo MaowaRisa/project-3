@@ -10,20 +10,20 @@ app.use(express.json());
 app.use(cors());
 
 // application routes
-app.use('/api/v1/products', ProductRoutes);
+app.use('/api/products', ProductRoutes);
 app.use('/api/orders', OrderRoutes);
 
 // wrong route error
-app.use('/api',(req, res) => {
+app.use('/api', (req: Request, res: Response) => {
   res.status(404).json({
     success: false,
     message: 'Route not found',
   });
 });
-app.get('/', (req, res) =>{
+app.get('/', (req: Request, res: Response) => {
   res.status(200).json({
-    message: "Welcome to inventory management system."
-  })
-})
+    message: 'Welcome to inventory management system.',
+  });
+});
 
 export default app;
