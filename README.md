@@ -6,15 +6,15 @@ project live link :
 https://project-3-m057un3il-al-jannatul-maowas-projects.vercel.app/
 ### Products
 1. Create new products
-https://project-3-henna-seven.vercel.app/api/v1/products/create-product
+https://project-3-henna-seven.vercel.app/api/products/create-product
 2. Retrieve all products 
-https://project-3-henna-seven.vercel.app/api/v1/products
+https://project-3-henna-seven.vercel.app/api/products
 3. Search for products by name, description and category 
-https://project-3-henna-seven.vercel.app/api/v1/products?searchTerm=Red
+https://project-3-henna-seven.vercel.app/api/products?searchTerm=Red
 4. Update product
-https://project-3-henna-seven.vercel.app/api/v1/products/productId
+https://project-3-henna-seven.vercel.app/api/products/productId
 5. Delete product
-https://project-3-henna-seven.vercel.app/api/v1/products/productId
+https://project-3-henna-seven.vercel.app/api/products/productId
 ### Orders
 1. Create new order
 https://project-3-henna-seven.vercel.app/api/orders
