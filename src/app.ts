@@ -13,16 +13,16 @@ app.use(cors());
 app.use('/api/products', ProductRoutes);
 app.use('/api/orders', OrderRoutes);
 
+app.get('/', (req: Request, res: Response) => {
+  res.status(200).json({
+    message: `Welcome to inventory management system. Products endpoint: /api/products and orders Endpoint: /api/orders`,
+  });
+});
 // wrong route error
-app.use('/api', (req: Request, res: Response) => {
+app.use('/', (req: Request, res: Response) => {
   res.status(404).json({
     success: false,
     message: 'Route not found',
-  });
-});
-app.get('/', (req: Request, res: Response) => {
-  res.status(200).json({
-    message: 'Welcome to inventory management system.',
   });
 });
 

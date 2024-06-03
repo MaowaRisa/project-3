@@ -133,11 +133,15 @@ const deleteProduct = async (req: Request, res: Response) => {
   try {
     const { productId } = req.params;
     const result = await ProductServices.deleteProductFromDB(productId);
-    if (!isEmptyOrNull(result)) {
+    if (
+      !isEmptyOrNull(result) &&
+      result.acknowledged &&
+      result.deletedCount === 1
+    ) {
       res.status(200).json({
         success: true,
         message: 'Product deleted successfully!',
-        data: result,
+        data: null,
       });
     } else {
       throw new Error('Delete not successful!');
