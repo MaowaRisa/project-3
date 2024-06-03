@@ -25,11 +25,11 @@ const createNewOrder = async (req: Request, res: Response) => {
         const validatedOrder = orderValidationSchema.parse(orderData);
 
         const result = await OrderServices.createNewOrderIntoDB(validatedOrder);
-
+     
         if (!isEmptyOrNull(result)) {
           // update the product inventory quantity and stock
-          updateProduct(productId, quantity, inventory);
-
+          await updateProduct(productId, quantity, inventory);
+       
           res.status(200).json({
             success: true,
             message: 'Order created successfully!',
@@ -83,7 +83,7 @@ const getAllOrders = async (req: Request, res: Response) => {
   }
 };
 // update the product
-const updateProduct = (
+const updateProduct = async(
   productId: string,
   quantity: number,
   inventory: TInventory,
@@ -96,7 +96,7 @@ const updateProduct = (
       inStock: stockStatus,
     },
   };
-  ProductServices.updateProductIntoDB(productId, updatedInventory);
+  await ProductServices.updateProductIntoDB(productId, updatedInventory);
 };
 export const OrderControllers = {
   createNewOrder,
