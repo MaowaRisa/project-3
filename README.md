@@ -3,25 +3,25 @@ This is a straightforward Express application designed to manage product and ord
 
 ## Project API for products and orders management
 project live link : 
-https://assignmenttwo-lilac.vercel.app/
+https://assignmentinventory.vercel.app/
 ### Products
-1. Create new products
-https://assignmenttwo-lilac.vercel.app/api/products/create-product
-2. Retrieve all products 
-https://assignmenttwo-lilac.vercel.app/api/products
-3. Search for products by name, description and category 
-https://assignmenttwo-lilac.vercel.app/api/products?searchTerm=Red
-4. Update product
-https://assignmenttwo-lilac.vercel.app/api/products/productId
-5. Delete product
-https://assignmenttwo-lilac.vercel.app/api/products/productId
+1. Create new products(post)
+https://assignmentinventory.vercel.app/api/products
+3. Retrieve all products 
+https://assignmentinventory.vercel.app/api/products
+4. Search for products by name, description and category 
+https://assignmentinventory.vercel.app/api/products?searchTerm=Red
+5. Update product
+https://assignmentinventory.vercel.app/api/products/productId
+6. Delete product
+https://assignmentinventory.vercel.app/api/products/productId
 ### Orders
 1. Create new order
-https://assignmenttwo-lilac.vercel.app/api/orders
+https://assignmentinventory.vercel.app/api/orders
 2. Retrieve all orders
-https://assignmenttwo-lilac.vercel.app/api/orders
+https://assignmentinventory.vercel.app/api/orders
 3. Get orders for specific email
-https://assignmenttwo-lilac.vercel.app/api/orders?email=email
+https://assignmentinventory.vercel.app/api/orders?email=email
 
 ## What you need to run this app
 - Node JS (used version : v20.11.1)
