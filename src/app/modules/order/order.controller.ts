@@ -28,13 +28,15 @@ const createNewOrder = async (req: Request, res: Response) => {
      
         if (!isEmptyOrNull(result)) {
           // update the product inventory quantity and stock
-          await updateProduct(productId, quantity, inventory);
+          const updatedProduct = await updateProduct(productId, quantity, inventory);
+          if(updatedProduct){
+            res.status(200).json({
+              success: true,
+              message: 'Order created successfully!',
+              data: result,
+            });
+          }
        
-          res.status(200).json({
-            success: true,
-            message: 'Order created successfully!',
-            data: result,
-          });
         } else {
           throw new Error('Order creation is not successful!');
         }
@@ -96,7 +98,9 @@ const updateProduct = async(
       inStock: stockStatus,
     },
   };
-  await ProductServices.updateProductIntoDB(productId, updatedInventory);
+  const result = await ProductServices.updateProductIntoDB(productId, updatedInventory);
+
+  return result;
 };
 export const OrderControllers = {
   createNewOrder,
